@@ -2,7 +2,7 @@
 /**
  * @param string $template
  * @return array
- * @throws LogicException if quantity of open and close symbols in template are not equal
+ * @throws Exception if quantity of open and close symbols in template are not equal
  */
 function parseTemplate($template, $recursion = false) {
 
