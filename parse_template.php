@@ -1,8 +1,9 @@
 <?php
 /**
  * @param string $template
+ * @param bool $recursion shows if this is first call of function or from recursion
  * @return array
- * @throws Exception if quantity of open and close symbols in template are not equal
+ * @throws Exception If quantity of open and close symbols in template are not equal
  */
 function parseTemplate($template, $recursion = false) {
 
