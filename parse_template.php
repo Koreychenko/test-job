@@ -7,14 +7,12 @@
  */
 function parseTemplate($template, $recursion = false) {
 
-    static $result;
+    static $result = [];
 
     if (!$recursion) {
-        $result = "";
-    }
-
-    if (mb_substr_count($template, '[') != mb_substr_count($template, ']')) {
-        throw new Exception ("Bad template given. Quantity of open and close symbols in template are not equal");
+        if (mb_substr_count($template, '[') != mb_substr_count($template, ']')) {
+            throw new Exception ("Bad template given. Quantity of open and close symbols in template are not equal");
+        }
     }
 
     if (preg_match("/^(.*)\[([^\[\]]+)\](.*)$/U", $template, $matches)) {
